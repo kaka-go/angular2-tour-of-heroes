@@ -5,7 +5,8 @@ import { HeroService } from './hero.service';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: 'app/dashboard.component.html'
+  templateUrl: 'app/dashboard.component.html',
+  styleUrls: ['app/dashboard.component.css']
 })
 export class DashboardComponent implements OnInit{ 
   
@@ -17,7 +18,7 @@ export class DashboardComponent implements OnInit{
 
   ngOnInit(): void {
     this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1,5));
+      .then(heroes => this.heroes = heroes.slice(0,4));
   }
 
   gotoDetail(hero: Hero): void { 
